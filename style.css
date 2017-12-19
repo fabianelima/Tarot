@@ -1,0 +1,6 @@
+main section {
+  display: none;
+}
+main section:nth-child(1) {
+  display: block;
+}
