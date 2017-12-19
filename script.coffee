@@ -1,7 +1,7 @@
 $ ->
 	ctrl = []
 	reading = {
-		isReading: true
+		isReading: false
 		numCards: 0
 		cardsClicked: 0
 		cardsReading: []
@@ -40,10 +40,19 @@ $ ->
 
 		back: ->
 			reading.isReading = false
+			reading.numCards = 0
+			reading.cardsClicked = 0
+			reading.cardsReading = []
 			$('main section').fadeOut()
 			$('main section:nth-child(1)').delay(400).fadeIn()
 			$('main section:nth-child(2) .cards').html('')
-			$('main section:nth-child(3) .cards').html('')
+			$('main section:nth-child(3)').html('
+				<h1>Leitura</h1>
+				<p class="help"></p>
+				<div class="cards"></div>
+				<button class="shuffle">Embaralhar</button>
+				<button class="back">< Voltar</button>
+			')
 
 		close: -> $('.modal').fadeOut()
 
@@ -71,7 +80,7 @@ $ ->
 			func.rNumber()
 
 			for i in ctrl
-				$('main section:nth-child(3) .cards').append('<div class="card-r" id="c' + i + '">' + cards[i].name + '</div>')
+				$('main section:nth-child(3) .cards').append('<div class="card-r" id="c' + i + '"><img src="back.png"></div>')
 
 			$('.modal').fadeIn().html('
 				<h1>Escolha o tipo de leitura</h1>
@@ -85,9 +94,9 @@ $ ->
 			reading.numCards = Number($el.attr('class').slice(4))
 			$('.modal, .shuffle').fadeOut()
 
-			if $el.attr('class') is 'read1' then $('main section:nth-child(3) p').html('Clique sobre uma carta:')
-			if $el.attr('class') is 'read2' then $('main section:nth-child(3) p').html('Clique sobre duas cartas:')
-			if $el.attr('class') is 'read3' then $('main section:nth-child(3) p').html('Clique sobre três cartas:')
+			if $el.attr('class') is 'read1' then $('main section:nth-child(3) .help').html('Clique sobre uma carta:')
+			if $el.attr('class') is 'read2' then $('main section:nth-child(3) .help').html('Clique sobre duas cartas:')
+			if $el.attr('class') is 'read3' then $('main section:nth-child(3) .help').html('Clique sobre três cartas:')
 
 		choice: ($el) ->
 			reading.cardsClicked++
@@ -97,22 +106,23 @@ $ ->
 
 				if reading.numCards is 1
 					$('main section:nth-child(3) .cards').html('
-						<h1>' + cards[Number($el.attr('id').slice(1))].name + '</h1>
+						<h2>' + cards[Number($el.attr('id').slice(1))].name + '</h2>
 						<p>' + cards[Number($el.attr('id').slice(1))].desc + '</p>
 					')
 
 				if reading.numCards > 1
-					console.log 'oioi', reading.cardsReading, reading.numCards
 					if reading.numCards is reading.cardsClicked
 						$('main section:nth-child(3) .cards').html('')
 
 						k = 0
 						reading.cardsReading.forEach ->
 							$('main section:nth-child(3) .cards').append('
-								<h1>' + cards[reading.cardsReading[k]].name + '</h1>
+								<h2>' + cards[reading.cardsReading[k]].name + '</h2>
 								<p>' + cards[reading.cardsReading[k]].desc + '</p>
 							')
 							k++
+
+				$('main section:nth-child(3) .help').html('')
 			else
 				$('.card-r').css { pointerEvents: 'none' }
 

@@ -3,7 +3,7 @@
     var cards, ctrl, func, nav, reading;
     ctrl = [];
     reading = {
-      isReading: true,
+      isReading: false,
       numCards: 0,
       cardsClicked: 0,
       cardsReading: []
@@ -38,10 +38,13 @@
       },
       back: function() {
         reading.isReading = false;
+        reading.numCards = 0;
+        reading.cardsClicked = 0;
+        reading.cardsReading = [];
         $('main section').fadeOut();
         $('main section:nth-child(1)').delay(400).fadeIn();
         $('main section:nth-child(2) .cards').html('');
-        return $('main section:nth-child(3) .cards').html('');
+        return $('main section:nth-child(3)').html('<h1>Leitura</h1> <p class="help"></p> <div class="cards"></div> <button class="shuffle">Embaralhar</button> <button class="back">< Voltar</button>');
       },
       close: function() {
         return $('.modal').fadeOut();
@@ -75,7 +78,7 @@
         func.rNumber();
         for (l = 0, len = ctrl.length; l < len; l++) {
           i = ctrl[l];
-          $('main section:nth-child(3) .cards').append('<div class="card-r" id="c' + i + '">' + cards[i].name + '</div>');
+          $('main section:nth-child(3) .cards').append('<div class="card-r" id="c' + i + '"><img src="back.png"></div>');
         }
         return $('.modal').fadeIn().html('<h1>Escolha o tipo de leitura</h1> <button class="read1">Uma carta</button> <button class="read2">Duas cartas</button> <button class="read3">Três cartas</button>');
       },
@@ -84,13 +87,13 @@
         reading.numCards = Number($el.attr('class').slice(4));
         $('.modal, .shuffle').fadeOut();
         if ($el.attr('class') === 'read1') {
-          $('main section:nth-child(3) p').html('Clique sobre uma carta:');
+          $('main section:nth-child(3) .help').html('Clique sobre uma carta:');
         }
         if ($el.attr('class') === 'read2') {
-          $('main section:nth-child(3) p').html('Clique sobre duas cartas:');
+          $('main section:nth-child(3) .help').html('Clique sobre duas cartas:');
         }
         if ($el.attr('class') === 'read3') {
-          return $('main section:nth-child(3) p').html('Clique sobre três cartas:');
+          return $('main section:nth-child(3) .help').html('Clique sobre três cartas:');
         }
       },
       choice: function($el) {
@@ -99,19 +102,19 @@
         if (reading.cardsClicked <= reading.numCards) {
           reading.cardsReading.push(Number($el.attr('id').slice(1)));
           if (reading.numCards === 1) {
-            $('main section:nth-child(3) .cards').html('<h1>' + cards[Number($el.attr('id').slice(1))].name + '</h1> <p>' + cards[Number($el.attr('id').slice(1))].desc + '</p>');
+            $('main section:nth-child(3) .cards').html('<h2>' + cards[Number($el.attr('id').slice(1))].name + '</h2> <p>' + cards[Number($el.attr('id').slice(1))].desc + '</p>');
           }
           if (reading.numCards > 1) {
-            console.log('oioi', reading.cardsReading, reading.numCards);
             if (reading.numCards === reading.cardsClicked) {
               $('main section:nth-child(3) .cards').html('');
               k = 0;
-              return reading.cardsReading.forEach(function() {
-                $('main section:nth-child(3) .cards').append('<h1>' + cards[reading.cardsReading[k]].name + '</h1> <p>' + cards[reading.cardsReading[k]].desc + '</p>');
+              reading.cardsReading.forEach(function() {
+                $('main section:nth-child(3) .cards').append('<h2>' + cards[reading.cardsReading[k]].name + '</h2> <p>' + cards[reading.cardsReading[k]].desc + '</p>');
                 return k++;
               });
             }
           }
+          return $('main section:nth-child(3) .help').html('');
         } else {
           return $('.card-r').css({
             pointerEvents: 'none'
