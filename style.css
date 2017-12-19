@@ -14,7 +14,8 @@ main section {
 main section:nth-child(1) {
   display: block;
 }
-main .card {
+main .card,
+main .card-r {
   width: 5em;
   height: 8em;
   background: white;
