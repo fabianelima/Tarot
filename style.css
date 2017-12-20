@@ -6,21 +6,38 @@
   left: 25%;
   background: white;
   border: 1px solid grey;
+  padding: 0.5em;
   display: none;
+}
+.modal img {
+  width: 20%;
+  float: right;
 }
 main section {
   display: none;
+}
+main section img {
+  width: 20%;
 }
 main section:nth-child(1) {
   display: block;
 }
 main .card,
 main .card-r {
-  width: 5em;
-  height: 8em;
+  width: 8em;
+  height: 12em;
+  margin: 0.5em;
   background: white;
   border: 1px solid grey;
   border-radius: 0.4em;
+  overflow: hidden;
   float: left;
   cursor: pointer;
+}
+main .card img,
+main .card-r img {
+  width: 100%;
+}
+img {
+  width: 100%;
 }
