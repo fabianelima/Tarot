@@ -1,15 +1,58 @@
+* { margin:0;padding:0;border:0;outline:0;font-size:100%;line-height:1.2em;background:transparent; }
+
+body {
+	background: #5D4954;
+	color: #EEE5E9;
+	padding: 2em;
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+
+	button {
+		font-family: inherit;
+		background: #EEE5E9;
+		color: #546A7B;
+		border-radius: 0.4em;
+		padding: 0.5em 0.8em;
+		margin-top: 1em;
+		cursor: pointer;
+	}
+	button:hover {
+		color: #EEE5E9;
+		background: #546A7B;
+	}
+
+	h1, h2, h3 {
+		font-family: 'Bungee', cursive;
+		font-size: 2em;
+		color: #EEE5E9;
+		text-shadow: 2px 2px 2px #546A7B;
+		margin-bottom: 0.5em;
+	}
+	h3 { font-size: 1.5em; }
+	h1 { font-size: 5em; }
+
+	p { margin: 0.5em 0; }
+	hr { margin: 2em 0; border-top: 1px solid #546A7B; }
+}
+
 .modal {
-	position: absolute;
+	position: fixed;
 	width: 50%;
-	height: 70%;
 	top: 15%;
 	left: 25%;
-	background: white;
-	border: 1px solid grey;
-	padding: 0.5em;
+	background: #0D1F2D;
+	box-shadow: 0 0 1em #0D1F2D;
+	border-radius: 0.5em;
+	padding: 1.5em;
 	display: none;
 
 	img { width: 20%; float: right; }
+}
+
+.back {
+	position: fixed;
+	top: 0.5em;
+	right: 1em;
 }
 
 main {
@@ -24,10 +67,9 @@ main {
 
 	.card, .card-r {
 		width: 8em;
-		height: 12em;
+		height: 13em;
 		margin: 0.5em;
-		background: white;
-		border: 1px solid grey;
+		background: #EEE5E9;
 		border-radius: 0.4em;
 		overflow: hidden;
 		float: left;
@@ -38,3 +80,8 @@ main {
 }
 
 img { width: 100%; }
+
+.home {
+	width: 40%;
+	margin: 0 30%;
+}

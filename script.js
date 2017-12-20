@@ -416,10 +416,10 @@
         reading.numCards = 0;
         reading.cardsClicked = 0;
         reading.cardsReading = [];
-        $('main section').fadeOut();
+        $('main section, .modal').fadeOut();
         $('main section:nth-child(1)').delay(400).fadeIn();
         $('main section:nth-child(2) .cards').html('');
-        return $('main section:nth-child(3)').html('<h1>Leitura</h1> <p class="help"></p> <div class="cards"></div> <button class="shuffle">Embaralhar</button> <button class="back">< Voltar</button>');
+        return $('main section:nth-child(3)').html('<h2>Leitura</h2> <button class="back">< Voltar</button> <p class="help"></p> <div class="cards"></div> <button class="shuffle">Embaralhar</button>');
       },
       close: function() {
         return $('.modal').fadeOut();
@@ -436,7 +436,7 @@
       },
       seeCard: function($el) {
         $('.modal').fadeIn();
-        return $('.modal').html('<h1>' + cards[Number($el.attr('id').slice(1))].name + '</h1> <img src="img/' + cards[Number($el.attr('id').slice(1))].art + '.jpg"> <p>Palavras-chave: ' + cards[Number($el.attr('id').slice(1))].key[0] + '</p> <p>Invertido: ' + cards[Number($el.attr('id').slice(1))].key[1] + '</p> <button class="close">Fechar</button>');
+        return $('.modal').html('<img src="img/' + cards[Number($el.attr('id').slice(1))].art + '.jpg"> <h2>' + cards[Number($el.attr('id').slice(1))].name + '</h2> <p>Palavras-chave: ' + cards[Number($el.attr('id').slice(1))].key[0] + '</p> <p>Invertido: ' + cards[Number($el.attr('id').slice(1))].key[1] + '</p> <button class="close">Fechar</button>');
       },
       rNumber: function() {
         var randy;
@@ -455,7 +455,7 @@
           i = ctrl[l];
           $('main section:nth-child(3) .cards').append('<div class="card-r" id="c' + i + '"><img src="img/back.png"></div>');
         }
-        return $('.modal').fadeIn().html('<h1>Escolha o tipo de leitura</h1> <button class="read1">Uma carta</button> <button class="read2">Duas cartas</button> <button class="read3">Três cartas</button>');
+        return $('.modal').fadeIn().html('<h2>Escolha o tipo de leitura</h2> <button class="read1">Uma carta</button> <button class="read2">Duas cartas</button> <button class="read3">Três cartas</button>');
       },
       numberCards: function($el) {
         reading.isReading = true;
@@ -481,14 +481,14 @@
         if (reading.cardsClicked <= reading.numCards) {
           reading.cardsReading.push(Number($el.attr('id').slice(1)));
           if (reading.numCards === 1) {
-            $('main section:nth-child(3) .cards').html('<h2>' + cards[Number($el.attr('id').slice(1))].name + '</h2> <img src="img/' + cards[Number($el.attr('id').slice(1))].art + '.jpg"> <p>Palavras-chave: ' + cards[Number($el.attr('id').slice(1))].key[0] + '</p> <p>Invertido: ' + cards[Number($el.attr('id').slice(1))].key[1] + '</p>');
+            $('main section:nth-child(3) .cards').html('<h3>' + cards[Number($el.attr('id').slice(1))].name + '</h3> <img src="img/' + cards[Number($el.attr('id').slice(1))].art + '.jpg"> <p>Palavras-chave: ' + cards[Number($el.attr('id').slice(1))].key[0] + '</p> <p>Invertido: ' + cards[Number($el.attr('id').slice(1))].key[1] + '</p>');
           }
           if (reading.numCards > 1) {
             if (reading.numCards === reading.cardsClicked) {
               $('main section:nth-child(3) .cards').html('');
               k = 0;
               reading.cardsReading.forEach(function() {
-                $('main section:nth-child(3) .cards').append('<h2>' + cards[reading.cardsReading[k]].name + '</h2> <img src="img/' + cards[reading.cardsReading[k]].art + '.jpg"> <p>Palavras-chave: ' + cards[reading.cardsReading[k]].key[0] + '</p> <p>Invertido: ' + cards[reading.cardsReading[k]].key[1] + '</p> <hr/>');
+                $('main section:nth-child(3) .cards').append('<h3>' + cards[reading.cardsReading[k]].name + '</h3> <img src="img/' + cards[reading.cardsReading[k]].art + '.jpg"> <p>Palavras-chave: ' + cards[reading.cardsReading[k]].key[0] + '</p> <p>Invertido: ' + cards[reading.cardsReading[k]].key[1] + '</p> <hr/>');
                 return k++;
               });
             }
