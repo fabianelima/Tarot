@@ -8,23 +8,238 @@ $ ->
 	}
 	cards = [	# São 78 cartas no total, 22 arcanos maiores. cada carta terá sua 'ficha'. Vou começar com 5 cartas só pra ver se funciona.
 				{
-					name: 'carta 1'
+					name: 'O Bobo'
 					desc: 'Lorem ipsum dolor sit ammet'
-				}
-				{
-					name: 'carta 2'
+				},{
+					name: 'O Mago'
 					desc: 'Lorem ipsum dolor sit ammet'
-				}
-				{
-					name: 'carta 3'
+				},{
+					name: 'A Alta Sacerdotisa'
 					desc: 'Lorem ipsum dolor sit ammet'
-				}
-				{
-					name: 'carta 4'
+				},{
+					name: 'A Imperatriz'
 					desc: 'Lorem ipsum dolor sit ammet'
-				}
-				{
-					name: 'carta 5'
+				},{
+					name: 'O Imperador'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'O Hierofanta'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Os Amantes'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'A Carruagem'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Força'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'O Eremita'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Roda da Fortuna'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Justiça'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'O Enforcado'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Morte'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Temperança'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'O Diabo'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'A Torre'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'A Estrela'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'A Lua'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'O Sol'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Julgamento'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'O Mundo'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Ás de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dois de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Três de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Quatro de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cinco de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Seis de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Sete de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Oito de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Nove de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dez de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Valete de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cavaleiro de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rainha de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rei de Paus'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Ás de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dois de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Três de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Quatro de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cinco de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Seis de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Sete de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Oito de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Nove de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dez de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Valete de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cavaleiro de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rainha de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rei de Copas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Ás de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dois de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Três de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Quatro de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cinco de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Seis de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Sete de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Oito de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Nove de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dez de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Valete de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cavaleiro de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rainha de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rei de Espadas'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Ás de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dois de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Três de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Quatro de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cinco de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Seis de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Sete de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Oito de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Nove de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Dez de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Valete de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Cavaleiro de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rainha de Ouros'
+					desc: 'Lorem ipsum dolor sit ammet'
+				},{
+					name: 'Rei de Ouros'
 					desc: 'Lorem ipsum dolor sit ammet'
 				}
 			]
@@ -100,6 +315,7 @@ $ ->
 
 		choice: ($el) ->
 			reading.cardsClicked++
+			$el.css { pointerEvents: 'none' }
 
 			if reading.cardsClicked <= reading.numCards
 				reading.cardsReading.push Number($el.attr('id').slice(1))
